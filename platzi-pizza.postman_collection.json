@@ -1,0 +1,512 @@
+{
+	"info": {
+		"_postman_id": "569dd50e-2278-4bcf-b099-04340802298a",
+		"name": "platzi-pizza",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14008309"
+	},
+	"item": [
+		{
+			"name": "pizza",
+			"item": [
+				{
+					"name": "Get pizzas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pizzas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pizzas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get pizzas with Pageable",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pizzas?page=1&elements=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pizzas"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "elements",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get pizza by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pizzas/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pizzas",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get available pizzas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pizzas/available",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pizzas",
+								"available"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get available pizzas Pageable",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pizzas/available?sortBy=name&sortDirection=ASC",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pizzas",
+								"available"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": "name"
+								},
+								{
+									"key": "sortDirection",
+									"value": "ASC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get pizza by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pizzas/name/POPEYE",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pizzas",
+								"name",
+								"POPEYE"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get pizzas with ingredient",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pizzas/with/avocado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pizzas",
+								"with",
+								"avocado"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get pizzas without ingredient",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pizzas/without/mozzarella",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pizzas",
+								"without",
+								"mozzarella"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get cheapest pizzas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pizzas/cheapest/19.99",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pizzas",
+								"cheapest",
+								"19.99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add pizza",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Popeye\",\r\n    \"description\": \"Tomatoes, Mozzarella, Ricotta & Baby Spinach\",\r\n    \"price\": 19.99,\r\n    \"vegetarian\": true,\r\n    \"vegan\": false,\r\n    \"available\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/pizzas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pizzas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update pizza",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idPizza\": 13,\r\n    \"name\": \"Popeye\",\r\n    \"description\": \"Tomatoes, Mozzarella, Ricotta & Baby Spinach\",\r\n    \"price\": 19.99,\r\n    \"vegetarian\": true,\r\n    \"vegan\": false,\r\n    \"available\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/pizzas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pizzas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update pizza price",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pizzaId\": 8,\r\n    \"newPrice\": 21.99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/pizzas/price",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pizzas",
+								"price"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete pizza",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pizzaId\": 8,\r\n    \"newPrice\": 21.99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/pizzas/14",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pizzas",
+								"14"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "Get orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get today orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/orders/today",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"orders",
+								"today"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get outside orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/orders/outside",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"orders",
+								"outside"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get customer orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/orders/customer/192758012",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"orders",
+								"customer",
+								"192758012"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get order summary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/orders/summary/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"orders",
+								"summary",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Random order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idCustomer\": \"617684636\",\r\n    \"method\": \"S\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/orders/random",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"orders",
+								"random"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "customers",
+			"item": [
+				{
+					"name": "Get Customer by phone",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/customers/phone/(792) 406-8858",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"customers",
+								"phone",
+								"(792) 406-8858"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
