@@ -60,9 +60,10 @@ public class PizzaController {
 
     @PostMapping
     public ResponseEntity<PizzaEntity> add(@RequestBody PizzaEntity pizza) {
-        return pizzaService.exists(pizza.getIdPizza())
-                ? ResponseEntity.ok(pizzaService.save(pizza))
-                : ResponseEntity.badRequest().build();
+        if (pizza.getIdPizza() == null || !this.pizzaService.exists(pizza.getIdPizza())) {
+            return ResponseEntity.ok(this.pizzaService.save(pizza));
+        }
+        return ResponseEntity.badRequest().build();
     }
 
     @PutMapping
