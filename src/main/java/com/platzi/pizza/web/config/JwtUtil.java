@@ -20,7 +20,7 @@ public class JwtUtil {
                 .withSubject(username)
                 .withIssuer("platzi-pizza")
                 .withIssuedAt(new Date())
-                .withExpiresAt(new Date(System.currentTimeMillis() * TimeUnit.DAYS.toMillis(15)))
+                .withExpiresAt(new Date(System.currentTimeMillis() + TimeUnit.DAYS.toMillis(15)))
                 .sign(ALGORITHM);
     }
     public Boolean isValid(String jwt){
