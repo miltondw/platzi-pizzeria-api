@@ -68,9 +68,11 @@ public class PizzaController {
 
     @PutMapping
     public ResponseEntity<PizzaEntity> update(@RequestBody PizzaEntity pizza) {
-        return pizzaService.exists(pizza.getIdPizza()) && pizza.getIdPizza() != null
-                ? ResponseEntity.ok(pizzaService.save(pizza))
-                : ResponseEntity.badRequest().build();
+        if (pizza.getIdPizza() != null && this.pizzaService.exists(pizza.getIdPizza())) {
+            return ResponseEntity.ok(this.pizzaService.save(pizza));
+        }
+
+        return ResponseEntity.badRequest().build();
     }
     @PutMapping("/price")
     public ResponseEntity<Void> updatePrice(@RequestBody UpdatePizzaPriceDto dto) {
